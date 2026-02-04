@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Flores y carta 💖</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffffff);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #333;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+
+    .screen {
+      display: none;
+      animation: fadeIn 0.8s ease;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .main-img {
+      width: 100%;
+      max-width: 280px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 14px;
+    }
+
+    .main-img:hover {
+      transform: scale(1.05);
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 32px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #ff4f81;
+      color: white;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      background-color: #ff2a66;
+      transform: translateY(-2px);
+    }
+
+    /* Carta */
+    .card {
+      background: #ffffff;
+      padding: clamp(25px, 5vw, 50px);
+      border-radius: 18px;
+      text-align: left;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid #f0f0f0;
+    }
+
+    .card h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 25px;
+      color: #ff4f81;
+      text-align: center;
+    }
+
+    .card p {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Ajustes extra para pantallas grandes */
+    @media (min-width: 1024px) {
+      body {
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Pantalla 1 -->
+  <div class="screen active" id="screen1">
+    <h2>Hola niña, este detalle es para ti 💖</h2>
+    <img src="https://url-shortener.me/4G26" class="main-img" onclick="nextScreen(2)">
+  </div>
+
+  <!-- Pantalla 2 -->
+  <div class="screen" id="screen2">
+    <h2>Son flores y una carta con cariño</h2>
+    <img src="https://url-shortener.me/4G28" class="main-img">
+    <br>
+    <button class="btn" onclick="nextScreen(3)">💌 Leer carta</button>
+  </div>
+
+  <!-- Pantalla 3 -->
+  <div class="screen" id="screen3">
+    <div class="card">
+      <h3>Querida Mislene,</h3>
+
+      <p>
+        Sé que no siempre te lo digo, pero de verdad admiro la forma en la que enfrentas la vida.
+        Incluso cuando las cosas se ponen difíciles, sigues adelante sin perder tu esencia,
+        y eso es algo que inspira más de lo que imaginas y es bonito ello. 
+      </p>
+
+      <p>
+        A veces te veo cansada, con el peso del mundo sobre los hombros, y aun así das lo mejor de ti.
+        Sin quejarte, sin rendirte. Siempre estás ahi escuchando o apoyando,
+        ofreciendo una palabra o simplemente tu presencia.
+      </p>
+
+      <p>
+        No es común encontrar a alguien con un corazón tan grande, tan lleno de bondad y paciencia.
+        Gracias por quedarte cuando otros se fueron, por preocuparte incluso cuando nadie te lo pide.
+        Haces una diferencia enorme en la vida de quienes te rodean y lo digo enserio niña. 
+      </p>
+
+      <p>
+        En mi vida, tú haces una diferencia especial. Me das calma, me inspiras
+        y me enseñas más de lo que crees. Te quiero con todo lo bueno que esa palabra puede significar,
+        y deseo que nunca dudes de lo valiosa que eres diohh miohh terrible ahí se fue mi seriedad niña pero espero que considere lo que dije. 
+      </p>
+
+      <p>
+        Eres alguien muy especial para mí. Te admiro, te valoro y te tengo un cariño inmenso.
+      </p>
+
+      <p>
+        Con mucho afecto,<br>
+        <strong>Mijael ñeñe</strong> 💌
+      </p>
+    </div>
+
+    <br>
+    <button class="btn" onclick="nextScreen(1)">🔙 Regresar</button>
+  </div>
+
+  <script>
+    function nextScreen(num) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById('screen' + num).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
